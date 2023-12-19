@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Final_Project.Models.GetProduct>
+
+@{
+    ViewBag.Title = "GetProduct";
+}
+
+<h2>Index</h2>
+
+@if (TempData["InsertMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <strong>Success!</strong> @TempData["InsertMessage"]
+    </div>
+}
+
+<p>
+    @Html.ActionLink("Create New", "AddProduct")
+</p>
+<table class="table table-bordered table-hover table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fb_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fabric_name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fb_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fabric_name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
