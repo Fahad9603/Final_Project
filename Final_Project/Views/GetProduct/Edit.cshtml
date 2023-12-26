@@ -1,35 +1,16 @@
 ﻿@model Final_Project.Models.GetProduct
 
 @{
-    ViewBag.Title = "AddProduct";
+    ViewBag.Title = "Edit";
 }
 
-<h2>AddProduct</h2>
-
-@*@if (TempData["Message"] != null)
-    {
-        <div class="alert alert-danger fade in">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>ERROR!</strong> @TempData["Message"]
-        </div>
-    }*@
-
-@if (TempData["InsertMessage"] != null)
-{
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>ERROR! </strong> @TempData["InsertMessage"]
-    </div>
-
-
-}
-
-
+<h2>Edit</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
         <h4>GetProduct</h4>
         <hr />
@@ -52,7 +33,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>

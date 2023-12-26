@@ -78,5 +78,57 @@ namespace Final_Project.Models
 
            
         }
+
+
+        public bool UpdateProduct(GetProduct prr)
+        {
+
+           
+                SqlConnection con1 = new SqlConnection(cs);
+                SqlCommand cmd = new SqlCommand("sp_update_product", con1);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@fb_ID", prr.fb_ID);
+                cmd.Parameters.AddWithValue("@fabric_name", prr.fabric_name);
+                con1.Open();
+                int i = cmd.ExecuteNonQuery();
+
+                con1.Close();
+                if (i > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+        }
+
+
+
+        public bool DeleteProduct(string id)
+        {
+
+
+            SqlConnection con1 = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand("sp_delete_product", con1);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@fb_ID", id);
+            con1.Open();
+            int i = cmd.ExecuteNonQuery();
+
+            con1.Close();
+            if (i > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+
     }
 }

@@ -13,6 +13,21 @@
     </div>
 }
 
+
+@if (TempData["UpdateMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <strong>Success!</strong> @TempData["UpdateMessage"]
+    </div>
+}
+
+@if (TempData["DeleteMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <strong>Success!</strong> @TempData["DeleteMessage"]
+    </div>
+}
+
 <p>
     @Html.ActionLink("Create New", "AddProduct")
 </p>
@@ -37,9 +52,8 @@
                 @Html.DisplayFor(modelItem => item.fabric_name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id = item.fb_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.fb_ID })
             </td>
         </tr>
     }

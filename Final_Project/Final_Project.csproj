@@ -2723,6 +2723,8 @@
     <Content Include="Views\Login\View.cshtml" />
     <Content Include="Views\GetProduct\GetProduct.cshtml" />
     <Content Include="Views\GetProduct\AddProduct.cshtml" />
+    <Content Include="Views\GetProduct\Edit.cshtml" />
+    <Content Include="Views\GetProduct\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
